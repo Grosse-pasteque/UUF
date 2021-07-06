@@ -4,6 +4,7 @@ import os
 ### tree view in dict ###
 print(UUF.dicttreeview(os.getcwd()))
 
+
 ### type checking ###
 def function(): pass
 l = [1, 2, 3, 4, 5]
@@ -11,6 +12,7 @@ check_type = UUF.CheckType(
     ["hey", 5, function, l],
     [str, (int, str), (UUF.function, str), (str, int, list)]
 )
+
 
 
 ### pattern checking ###
@@ -23,13 +25,11 @@ check_pattern = UUF.Pattern(
 print('type checking :', check_type, check_pattern)
 
 
+
 ### unpacking all element from var ###
 v = (1, 2, (3, 4, 5), ['t', 2])
 print('unpacking all testing :', UUF.Unpack(v))
 
-#___________#
-print('_'*100, '\n')
-#___________#
 
 
 ### error data management testing ###
@@ -41,8 +41,10 @@ ED = UUF.ErrorData(
 # raise Exception(ED[TypeError])
 
 
+
 ### custom error message testing ###
 try:
 	'a' + 2
+
 except Exception as e:
 	raise UUF.LenghtError(UUF.BasicErrorMessage(e, __file__))

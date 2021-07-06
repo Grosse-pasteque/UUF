@@ -5,6 +5,7 @@ class CharError(Exception): pass
 class IntValueError(Exception): pass
 class TooBigValueError(Exception): pass
 
+
 ### class custom ###
 class ErrorData:
     def __init__(self, Errors: dict):
